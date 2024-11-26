@@ -1,0 +1,540 @@
+/* TO DO
+
+ - Refactor with nesting selectors 
+ - Ensure nested selectors are properly formatted
+ - remove unneeded properties
+
+*/
+
+
+/*************
+Basic Styling 
+**************/
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: grey;
+    overflow: hidden;
+    border: 1px solid red;
+}
+
+h1, p {
+    font-family: Sofia;
+}
+
+p {
+    font-size: .5em;
+}
+    
+
+h1 {
+    font-size: .8em;
+}
+
+/* Look in to centering w/o flexbox */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* margin: 20px;  */
+    /* margin-top: 5px; */
+    background-color: pink;
+}
+
+/* div {
+    border: 1px solid black;
+} */
+
+/* For testing visibility */
+section div {
+    /* margin: 20px; */
+    background-color: white;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* border: 1px solid yellow; */
+
+}
+
+/********************
+Reusable Page Elements 
+*********************/
+
+/* Will need to update all margins */
+
+/*******
+Header 
+********/
+.header {
+    width: 100vw;
+    height: 50px;
+    margin: 0;
+    background-color: deepskyblue;
+    color: black;
+}
+
+.header > */*h1, .header>p  */ {
+    margin: 0;
+}
+
+
+/**********
+Navigation 
+***********/
+
+.sidebar {
+    /* position: fixed; */
+    width: 10%;
+    min-width: 125px;
+    max-width: 250px;
+    height: 100vh;
+    background-color: black;
+}
+
+
+.nav {
+    /* Replace width w/ media queries? */
+    /* width: 15%;
+    min-width: 150px;
+    max-width: 250px;*/
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative; /*needed?*/
+    /* margin: 0px 5%; */
+    /* text-align: right; */
+    top: 50%; /*needed?*/
+    transform: translateY(-50%); /*needed?*/
+    /*z-index: 1;
+    top: 0;
+    left: 0; */
+    /* background-color: rgb(0, 66, 30); */
+    /* overflow-x: hidden; */
+    /* border: 3px solid blue; */
+    font-weight: bold;
+    /* padding-top: 25px; */
+
+    p, hr {
+        color: white;
+        text-align: center;
+        /* font-size: 1.25em; */
+    }
+
+    hr {
+        width: 60%;
+        margin: 15px 0px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    a {
+        /* font-size: 1.85em; */
+    }
+
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: white;
+    list-style-type: none;
+}
+
+.nav-item1, .nav-item2, .nav-item3 {
+    /* position: relative;
+    flex-grow: 1; */
+    /* margin: 3.2em 0; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    transition: transform .8s ease;
+
+    &:hover { 
+        background-color: cornflowerblue;
+        transform: translate(10px, 0px);
+        transition: transform .5s ease;
+
+        a {
+            color: goldenrod; 
+        }
+    }
+    
+    &a:active {
+        color: purple;
+    }
+    /* Can hide current page from menu */
+}
+
+/* Is this the cleanest it can be formatted?
+best to use type or class selectors? 
+*/
+
+
+/* 
+order
+    1. `:link` - style links to unvisited pages
+    2. `:visited` - style links to visited pages
+    3. `:hover` - style links when hovered on
+    4. `:active` - style the active link
+
+    a:hover MUST come after a:link and a:visited (if they are present)
+    a:active MUST come after a:hover
+ */
+
+
+/*******
+Buttons
+********/
+button {
+    height: 35px;
+    width: 95px;
+
+    &:hover {
+        color: black;
+        background: brown;
+
+    }
+
+    &:active {
+        color: black;
+        background: rgb(94, 24, 24);
+        font-weight: bold;
+    }
+}
+
+/* margin of main is hidden behind footer */
+
+/* Footer */
+.footer {
+    width: 100vw;
+    height: 25px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    /* margin-top: 20px; */
+    background-color: deepskyblue;
+}
+
+
+
+
+
+/************
+Card Styling 
+*************/
+
+/* Need to change everything to % so it's in relation to one another */
+
+
+.box-border {
+    border: 3px solid blue;
+    border-radius: .40%;
+}
+
+/* Need to set max-height */
+.card {
+
+    width: 92%;
+    /* min-width: 8vw; */
+    max-width: 750px;
+    height: 100%;
+    /* max-height: ; */
+    border-radius: 2%;
+    /* border: 1px solid red; */
+    padding: 20px 20px 15px 20px;
+    margin: 5px 20px 5px 20px;
+    background-color: black;
+}
+
+.card-border {
+    /* width: fit-content; */
+    /* height: 700px; */
+    height: 94%;
+    border: 1px solid green;
+    border-radius: 2% 2% 8% 8%;    background-color: rgb(141, 223, 248);
+}
+
+
+
+/* Need to add max width */
+
+.card-body-container {
+    /* position: relative; */
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-bar, .info-bar {
+    /* previous centered positioning */
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: auto; */
+    /* width: 95%; */
+
+    /* position: relative;
+    left: -3%;*/
+    width: 105%; 
+    border-radius: 2% / 50%; 
+}
+
+/* Need to find a way to better position this */
+.title-bar {
+    /* margin: -3px; */
+    /* background-color: ; */
+}
+
+.info-bar {
+    /* top: 54%; */
+    /* background-color: ; */
+}
+
+.card-box-top {
+    height: 47vh;
+    /* height: 65%; */
+    /* min-height: ; */
+    /* max-width: 50%; */
+    width: 100%;
+    background-color: black;
+
+    & img {
+        height: 100%;
+        display: block;
+        margin: auto;
+
+    }
+}
+
+.card-box-bottom {
+    height: 36vh;
+    /* height: 35%; */
+    /* min-height: ; */
+    /* max-width: 50%; */
+}
+
+.card-body-container p {
+    margin: 5px;
+}
+
+
+
+
+/***********
+Pack Opener
+************/
+
+.pack-opener {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    /* height: 95%; */
+    width: 65%;
+    margin: 20px;
+    border: 1px solid red;
+
+    div {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5px;
+        border: 1px solid red;
+    }
+
+    img, button {
+        border: 1px solid red;
+    }
+
+    img {
+        height: 100%;
+        width: 50%;
+        padding: 10px;
+        background-color: transparent;
+
+        &:nth-of-type(3) {
+            padding: 0;
+        }
+    }
+} 
+
+/* Table Display Radio-Buttons */
+
+.btn-row {
+    width: 100%;
+    max-width: 720px;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.toggle {
+    display: inline-block;
+    height: 35px;
+    width: 95px;
+    text-align: center;
+    color: black;
+    background-color: gray;
+    border: 1px solid black;
+    user-select: none;
+
+    &:hover {
+        color: black;
+        background: brown;
+
+    }
+
+    &:active {
+        color: black;
+        background: rgb(94, 24, 24);
+        font-weight: bold;
+    }
+
+    p {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.toggle-content {
+    visibility: collapse;
+    /* height: 0;
+    opacity: 0;
+    position: absolute;
+    bottom: 60%; */
+    background-color: yellowgreen;
+    transition: all 0.2 ease;
+}
+/* target transition */
+
+.show-table {
+    /* position: absolute; */
+    /* display: none; */
+}
+
+/* input[type="radio"].show-table:checked + .toggle-content {
+    height: 100%;
+    opacity: 1;
+    overflow: hidden;
+    transition: all 0.1 ease;
+} */
+
+/* input#pack2.show-table:checked + .toggle-content {
+    visibility: visible;
+}
+
+input[type="radio"].show-table:checked ~ * .toggle-content {
+    color: black;
+    background: rgb(94, 24, 24);
+    font-weight: bold;
+}
+
+input#pack2.show-table {
+    :checked {
+        .toggle-content {
+            visibility: visible;
+        }
+    }
+
+} */
+
+#pack1:checked ~ .toggle {
+    background-color: #3f0d9b;
+}
+
+
+
+
+
+
+
+/*****
+Table 
+******/
+
+table {
+    table-layout: fixed;
+    /* width: 100%; */
+    border-collapse: collapse;
+    border: 3px solid purple;
+}
+
+
+
+th, tr, td {
+    border: 2px solid black;
+}
+
+th, td {
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(182, 182, 182);
+}
+
+
+/*****
+Form
+******/
+
+form {
+    margin: 5px 15px 45px 15px;
+
+    h1, p {
+        margin: 20px 0;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    label, input, select {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    input, select {
+        width: 166px;
+        margin-top: 5px;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+    }
+
+
+
+}
+
+

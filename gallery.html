@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBD</title>
+    <!-- Favicon -->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'/> 
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="page-container">
+
+        <!-- Header -->
+            <!-- <header class="header">
+                <h1>text</h1>
+                <p>text</p>
+            </header> -->
+    
+            <!-- 
+            Navigation 
+            - Determine if side nav or not
+            -->
+            <aside class="sidebar">
+                <nav class="nav">
+                    <ul class="nav-items">
+                        <li class="nav-item1">
+                            <a href="index.html">Home</a>
+                        </li>
+            
+                        <li class="nav-item2">
+                            <a href="play.html">Play</a>
+                        </li>
+            
+                        <li class="nav-item3">
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+                    </ul>
+    
+                    <hr>
+                    <p>Magic: The Gathering <br>Sim</br></p>
+    
+                </nav>
+    
+            </aside>
+    
+            <!-- Main content of page -->
+            <main>
+
+                <!----------
+                Request Form 
+                ----------->
+
+                <form action="#" method="dialog">
+                    <h1>Request a Card</h1>
+                    <!-- <p>Enter your player information to find a match</p> -->
+                    
+                    <section class="form-block">
+
+                        <!-- Player Name -->
+                        <label for="name">
+                            Card Name: <input type="text" name="card_name" id="name" />
+                        </label>
+
+                        <!-- Game Difficulty
+                        <label for="difficulty">
+                            Set:
+                            <select name="difficulty_select" id="difficulty">
+                                <option>Select an option</option>
+                                <option>Foundations</option>
+                                <option>Hour of Devastation</option>
+                                <option>Portal</option>
+                            </select>
+                        </label> -->
+
+                        <!-- Card Picture -->
+                        <label for="file">
+                            Card Image: <input type="file" id="file" name="player_pfp" />
+                        </label>
+
+                        <div class="dropdown">
+                            <span>Select a Set</span>
+                            <div class="dropdown-items" style="background-color: black;"">
+                                <ul>
+                                    <li>
+                                        <a href="#" style="color: aliceblue;">Portal</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: aliceblue;">Hour of Devastation</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" style="color: aliceblue;">Foundations</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div> 
+
+                        <style>
+                            .dropdown {
+                                position: relative;
+                                display: inline-block;
+                                height: 25px;
+                                width: 80px;
+                                margin-bottom: 25px;
+                                border: 1px solid black;
+                            }
+                            
+                            .dropdown-items {
+                                display: none;
+                                position: absolute;
+                                background-color: #f9f9f9;
+                                min-width: 160px;
+                                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                padding: 12px 16px;
+                                z-index: 1;
+                            }
+                            
+                            .dropdown:hover .dropdown-items {
+                                display: block;
+                            }
+                            </style>
+                        
+                    </section>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit">Submit Request</button>
+                    </div>
+                    
+                </form>
+            </main>
+</body>
+
+</html>

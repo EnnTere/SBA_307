@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play</title>
+    <!-- Favicon -->
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'/> 
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="page-container">
+
+        <!-----
+        Header 
+        ------>
+        <!--  <header class="header">
+            <h1>text</h1>
+            <p>text</p>
+        </header> -->
+
+
+
+        <!---------
+        Navigation 
+        ---------->
+
+        <aside class="sidebar">
+            <nav class="nav">
+                <ul class="nav-items">
+                    <li class="nav-item1">
+                        <a href="index.html">Home</a>
+                    </li>
+        
+                    <li class="nav-item2">
+                        <a href="play.html">Play</a>
+                    </li>
+        
+                    <li class="nav-item3">
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                </ul>
+
+                <hr>
+                <p>Magic: The Gathering <br>Sim</br></p>
+
+            </nav>
+
+        </aside>
+
+
+        <!----
+        Main
+        ----->
+        <main class="overflow">
+
+
+            <!----------
+            Pack Opener
+            ------------>
+            <section class="pack-opener">
+
+                <!-- Available Packs -->
+                <div class="row1">
+                    <img src="assets\FDN_Pack.jpg" alt="Pack of Magic: The Gathering trading cards">
+                    <img src="assets\POR_Pack.jpg" alt="Pack of Magic: The Gathering trading cards">
+                    <img src="assets\HOU_Pack.jpg" alt="Pack of Magic: The Gathering trading cards">
+                </div>
+
+                <!-- Open Pack Buttons -->
+                <div class="btn-row">
+                    <!-- <button>Open Pack 1</button>
+                    <button>Open Pack 2</button>
+                    <button>Open Pack 3</button> -->
+
+                    <!-- Button + Table 1 -->
+                    <label for="pack1" class="toggle">
+                        <p>Open Pack</p>
+                        <input type="radio" name="show_pack" id="pack1" class="show-table">
+                    </label>
+
+                    <div class="toggle-content">
+                        <table>
+                            <colgroup>
+                                <col />
+                                <col style="background-color: green;">
+                            </colgroup>
+    
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                            </tr>
+                            <tr>
+                                <td>item</td>
+                                <td>item</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Button + Table 2 -->
+                    <label for="pack2" class="toggle">
+                        <p>Open Pack</p>
+                        <input type="radio" name="show_pack" id="pack2" class="show-table">
+                    </label>
+                    <div class="toggle-content">
+                        <table>
+                            <colgroup>
+                                <col />
+                                <col style="background-color: green;">
+                            </colgroup>
+    
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                            </tr>
+                            <tr>
+                                <td>item</td>
+                                <td>item</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Button + Table 3 -->
+                    <label for="pack3" class="toggle">
+                        <p>Open Pack</p>
+                        <input type="radio" name="show_pack" id="pack3" class="show-table">
+                    </label>
+                    <div class="toggle-content">
+                        <table>
+                            <colgroup>
+                                <col />
+                                <col style="background-color: green;">
+                            </colgroup>
+    
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                            </tr>
+                            <tr>
+                                <td>item</td>
+                                <td>item</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!-- Table -->
+                <!--<div class="row3">
+                    <table>
+                        <colgroup>
+                            <col />
+                            <col style="background-color: green;">
+                        </colgroup>
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Text</th>
+                            <th>Color</th>
+                            <th>Mana Cost</th>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+                        <tr>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                            <td>item</td>
+                        </tr>
+
+                    </table>
+
+                </div> -->
+
+            </section>
+
+
+            <!----------
+            Signup Form 
+            ----------->
+
+            <form action="#" method="dialog">
+                <h1>Play a Match</h1>
+                <!-- <p>Enter your player information to find a match</p> -->
+                
+                <section class="form-block">
+
+                    <!-- Player Name -->
+                    <label for="name">
+                        Player Name: <input type="text" name="player_name" id="name" />
+                    </label>
+
+                    <!-- Game Difficulty -->
+                    <label for="difficulty">
+                        Game Difficulty:
+                        <select name="difficulty_select" id="difficulty">
+                            <option>Select an option</option>
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                    </label>
+
+                    <!-- Player Profile Picture -->
+                    <label for="file">
+                        Profile Picture: <input type="file" id="file" name="player_pfp" />
+                    </label>
+                </section>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit">Find Game</button>
+                </div>
+                
+            </form>
+
+            <!-----
+            Footer
+            ------>
+            <!-- <footer class="footer"></footer> -->
+
+        </main>
+    </div>
+
+    
+
+
+</body>
+
+</html>

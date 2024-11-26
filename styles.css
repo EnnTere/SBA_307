@@ -7,6 +7,30 @@
 */
 
 
+
+/***************
+Color Variables 
+****************/
+:root {
+    --forest-light-bg: rgb(196, 211, 202);
+    --forest-dark-prim: rgb(0, 115, 62);
+    --island-light-bg: rgb(179, 206, 234);
+    --island-dark-prim: rgb(14, 104, 171);
+    --mountain-light-bg: rgb(235, 159, 130);
+    --mountain-dark-prim: rgb(211, 32, 42);
+    --plains-light-bg: rgb(248, 231, 185);
+    --plains-dark-prim: rgb(249, 250, 244);
+    --swamp-light-bg: rgb(166, 159, 157);
+    --swamp-dark-prim: rgb(21, 11, 0);
+
+    --LightPurple: #6E678A;
+    --DarkBrown: #432910;
+    --LightBrown: #8E5829;
+    --BrightOrange: #D25A16;
+    --LightBlue: #7FB8C9;
+}
+
+
 /*************
 Basic Styling 
 **************/
@@ -25,7 +49,7 @@ html {
 body {
     min-height: 100vh;
     margin: 0;
-    background-color: grey;
+    /* background-color: var(--DarkBrown); */
     overflow: hidden;
     /* border: 1px solid red; */
 }
@@ -34,10 +58,13 @@ body {
     font-family: 'IBM Plex Serif', serif;
 } */
 
-p, a, label, input, button, span {
+p, a, label, input, button, span, details {
     font-size: 1.5rem;
 }
     
+a {
+    color: var(--BrightOrange);
+}
 
 h1 {
     font-size: 4rem;
@@ -61,20 +88,23 @@ h6 {
 
 
 
+
+
 /************
 Media Queries
 *************/
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 1201px) {
     html {
-        font-size: 20px;
+        font-size: 14px;
+    }
+
+    .gallery-container .gallery {
+        flex: 25%;
+        max-width: 25%;
     }
 }
 
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 18px;
-    }
-}
 
 @media screen and (max-width: 1024px) {
     html {
@@ -119,23 +149,69 @@ Media Queries
         }
     }
 
-    .overflow {
+    .gallery-container .gallery {
+        flex: 33%;
+        max-width: 33%;
+    }
+
+    /* .overflow {
         overflow: auto;
-    }
+    } */
 
 }
 
-@media screen and (max-width: 1201px) {
+
+@media screen and (max-width: 768px) {
     html {
-        font-size: 14px;
+        font-size: 18px;
+    }
+
+    .gallery-container .gallery {
+        flex: 50%;
+        max-width: 50%;
     }
 }
 
+@media screen and (max-width: 560px) {
+    html {
+        font-size: 20px;
+    }
+
+    .gallery-container .gallery {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 20px;
+    }
+
+    .gallery-container .gallery {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+/******************
+Testing Properties
+*******************/
+
+/* div {
+    border: 1px solid black;
+} */
+
+/* For testing visibility */
+/* section div {
+    margin: 20px;
+    background-color: white;
+} */
 
 
+/********************
+Reusable Page Elements 
+*********************/
 
-
-/* Look in to centering w/o flexbox */
 main {
     display: flex;
     flex-direction: column;
@@ -144,29 +220,45 @@ main {
     width: 100vw;
     /* margin: 20px;  */
     /* margin-top: 5px; */
-    background-color: pink;
-}
-
-/* div {
-    border: 1px solid black;
-} */
-
-/* For testing visibility */
-section div {
-    /* margin: 20px; */
-    background-color: white;
-}
-
-.overflow {
-    overflow: auto;
+    /* background-color: pink; */
 }
 
 
+/* Basic styling & functionality */
+details {
+    padding: 10px;
+    border-radius: 4px;
+
+    summary {
+        cursor: pointer;
+        font-weight: bold;
+        padding: 0.5em;
+        transition: margin 350ms ease-out;
+
+        * {
+            display: inline;
+        }
+    }
+}
+
+/* Moves margin to fake an opening/closing transition */
+details[open] summary {
+    transition: margin 150ms ease-out;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+}
+
+/* Moves animates opacity for opening transition */
+details[open] summary ~ * {
+    animation: open .5s ease-in-out;
+}
+
+@keyframes open {
+    0%    {opacity: 0; transform: translateX(-10px)}
+    100%  {opacity: 1; transform: translateX(0)}
+}
 
 
-/********************
-Reusable Page Elements 
-*********************/
 
 /* Will need to update all margins */
 
@@ -180,6 +272,9 @@ Reusable Page Elements
 
 }
 
+.overflow {
+    overflow: auto;
+}
 
 /*******
 Header 
@@ -282,12 +377,12 @@ Navigation
     transition: transform .8s ease;
 
     &:hover { 
-        background-color: cornflowerblue;
+        background-color: var(--island-dark-prim);
         transform: translate(10px, 0px);
         transition: transform .5s ease;
 
         a {
-            color: goldenrod; 
+            color: var(--BrightOrange); 
         }
     }
     
@@ -356,7 +451,7 @@ Card Styling
 
 
 .box-border {
-    border: 3px solid blue;
+    border: 4px solid var(--island-dark-prim);
     border-radius: .40%;
 }
 
@@ -378,8 +473,10 @@ Card Styling
     /* width: fit-content; */
     /* height: 700px; */
     height: 94%;
-    border: 1px solid green;
+    border: 1px solid black;
     border-radius: 2% 2% 8% 8%;    background-color: rgb(141, 223, 248);
+    /* background-color: var(--island-dark-prim); */
+    background: url("assets/greg-rosenke-wil-vem.jpg");
 }
 
 
@@ -406,6 +503,7 @@ Card Styling
     left: -3%;*/
     width: 105%; 
     border-radius: 2% / 50%; 
+    background-color: var(--island-light-bg);
 
     p { 
         padding: 5px;
@@ -448,10 +546,11 @@ Card Styling
     /* height: 35%; */
     /* min-height: ; */
     /* max-width: 50%; */
+    background-color: var(--island-light-bg);
 
     p {
         margin: 12px;
-        padding: 15px;
+        padding: 5px;
     }
 }
 
@@ -620,7 +719,7 @@ Form
 ******/
 
 form {
-    margin: 5px 15px 45px 15px;
+    margin: 55px 15px 45px 15px;
 
     h1, p {
         margin: 20px 0;
@@ -642,11 +741,69 @@ form {
 
     button {
         display: block;
+        height: auto;
+        width: auto;
         margin: 0 auto;
     }
 
+    /* .form-block {
+        position: relative; 
 
+        button {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);    
+        }
+    } */
 
 }
 
+/*************
+Image Gallery
+**************/
+
+.gallery-expander {
+    width: 95%;
+    margin-top: 45px;
+    /* margin: auto; */
+    /* border: 1px solid black; */
+    /* border-radius: 4px; */
+    /* height: 33%; */
+
+    details {
+        /* height: 33%; */
+        border: 1px solid black;
+    }
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+    /* width: 25%; */
+    /* float: left; */
+    padding: 1rem;
+
+    /* * {
+        box-sizing: border-box;
+    } */
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 5px;
+    /* border: 1px solid black; */
+
+    img {
+        width: 100%;
+        height: auto;
+        margin-top: 7px;
+        vertical-align: middle;
+    }
+}
 

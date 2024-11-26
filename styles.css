@@ -17,26 +17,123 @@ Basic Styling
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+    font-family: 'IBM Plex Serif', serif;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
     background-color: grey;
     overflow: hidden;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
-h1, p {
-    font-family: Sofia;
-}
+/* body, h1, p, a, label, input, button, span {
+    font-family: 'IBM Plex Serif', serif;
+} */
 
-p {
-    font-size: .5em;
+p, a, label, input, button, span {
+    font-size: 1.5rem;
 }
     
 
 h1 {
-    font-size: .8em;
+    font-size: 4rem;
 }
+
+h3 {
+    font-size: 3.5rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2.5rem;
+}
+
+h6 {
+    font-size: 2rem;
+}
+
+
+
+/************
+Media Queries
+*************/
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+
+        .sidebar {
+            width: 100%;
+            max-width: 100%;
+            height: 10%;
+
+            .nav, ul {
+                flex-direction: row;
+                height: 100%;
+
+                .nav-items {
+                    width: 65%;
+                }
+
+                .nav-item1, .nav-item2, .nav-item3 {
+                    
+                    &:hover {
+                        transform: translate(0px, 10px);
+                    }
+                    
+                }
+            }
+
+            hr {
+                width: 5%;
+                transform: rotate(90deg);
+            }
+
+            p {
+                margin: 10px 0;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .overflow {
+        overflow: auto;
+    }
+
+}
+
+@media screen and (max-width: 1201px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+
+
+
 
 /* Look in to centering w/o flexbox */
 main {
@@ -65,6 +162,16 @@ section div {
 }
 
 
+
+
+/********************
+Reusable Page Elements 
+*********************/
+
+/* Will need to update all margins */
+
+/* Container */
+
 .page-container {
     width: 100vw;
     height: 100vh;
@@ -73,11 +180,6 @@ section div {
 
 }
 
-/********************
-Reusable Page Elements 
-*********************/
-
-/* Will need to update all margins */
 
 /*******
 Header 
@@ -146,11 +248,12 @@ Navigation
 
     p {
         margin-bottom: 15px;
+        font-size: 1.25rem;
     }
 
-    a {
-        /* font-size: 1.85em; */
-    }
+    /* a {
+        font-size: 1.85em;
+    } */
 
 }
 
@@ -215,8 +318,8 @@ order
 Buttons
 ********/
 button {
-    height: 35px;
-    width: 95px;
+    height: 50px;
+    width: 130px;
 
     &:hover {
         color: black;
@@ -245,9 +348,6 @@ button {
 }
 
 
-
-
-
 /************
 Card Styling 
 *************/
@@ -262,11 +362,10 @@ Card Styling
 
 /* Need to set max-height */
 .card {
-
     width: 92%;
     /* min-width: 8vw; */
     max-width: 750px;
-    height: 100%;
+    height: 99%;
     /* max-height: ; */
     border-radius: 2%;
     /* border: 1px solid red; */
@@ -307,6 +406,10 @@ Card Styling
     left: -3%;*/
     width: 105%; 
     border-radius: 2% / 50%; 
+
+    p { 
+        padding: 5px;
+    }
 }
 
 /* Need to find a way to better position this */
@@ -334,18 +437,27 @@ Card Styling
         margin: auto;
 
     }
+
+    p {
+        font-size: 3rem;
+    }
 }
 
 .card-box-bottom {
-    height: 36vh;
+    height: 32vh;
     /* height: 35%; */
     /* min-height: ; */
     /* max-width: 50%; */
+
+    p {
+        margin: 12px;
+        padding: 15px;
+    }
 }
 
-.card-body-container p {
+/* .card-body-container p {
     margin: 5px;
-}
+} */
 
 
 
@@ -432,7 +544,7 @@ Pack Opener
     position: absolute;
     bottom: 60%; */
     background-color: yellowgreen;
-    transition: all 0.2 ease;
+    transition: opacity 0.2 ease;
 }
 /* target transition */
 

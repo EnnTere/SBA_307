@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TBD</title>
     <!-- Favicon -->
-    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'/> 
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&display=swap' /> 
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -52,15 +52,15 @@
                 Request Form 
                 ----------->
 
-                <form action="#" method="dialog">
-                    <h1>Request a Card</h1>
+                <form action="#" method="dialog" style= "border: 2px solid black; padding: 10px 20px;">
+                    <h1 style="margin: 5px 0px 25px 0px;">Request a Card</h1>
                     <!-- <p>Enter your player information to find a match</p> -->
                     
-                    <section class="form-block">
+                    <section class="form-block" style="margin: 0 18%;">
 
                         <!-- Player Name -->
                         <label for="name">
-                            Card Name: <input type="text" name="card_name" id="name" />
+                            Card Name: <input type="text" name="card_name" id="name" style="width: 300px;"/>
                         </label>
 
                         <!-- Game Difficulty
@@ -76,20 +76,21 @@
 
                         <!-- Card Picture -->
                         <label for="file">
-                            Card Image: <input type="file" id="file" name="player_pfp" />
+                            Card Image: 
+                            <input type="file" id="file" name="card_file" style="width: 300px;"/>
                         </label>
 
                         <div class="dropdown">
-                            <span>Select a Set</span>
-                            <div class="dropdown-items" style="background-color: black;"">
+                            <span><strong>Select a Set</strong></span>
+                            <div class="dropdown-items">
                                 <ul>
-                                    <li>
+                                    <li style="color: aliceblue;">
                                         <a href="#" style="color: aliceblue;">Portal</a>
                                     </li>
-                                    <li>
+                                    <li style="color: aliceblue;">
                                         <a href="#" style="color: aliceblue;">Hour of Devastation</a>
                                     </li>
-                                    <li>
+                                    <li style="color: aliceblue;">
                                         <a href="#" style="color: aliceblue;">Foundations</a>
                                     </li>
                                 </ul>
@@ -101,10 +102,13 @@
                             .dropdown {
                                 position: relative;
                                 display: inline-block;
-                                height: 25px;
-                                width: 80px;
-                                margin-bottom: 25px;
+                                height: 45px;
+                                width: 300px;
+                                margin: 25px 0px;
+                                padding: 5px;
                                 border: 1px solid black;
+                                text-align: center;
+
                             }
                             
                             .dropdown-items {
@@ -112,9 +116,11 @@
                                 position: absolute;
                                 background-color: #f9f9f9;
                                 min-width: 160px;
+                                background-color: black;
                                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                                padding: 12px 16px;
+                                padding: 15px 25px;
                                 z-index: 1;
+                                text-align: left;
                             }
                             
                             .dropdown:hover .dropdown-items {
@@ -126,7 +132,7 @@
 
                     <!-- Submit Button -->
                     <div>
-                        <button type="submit">Submit Request</button>
+                        <button type="submit" style="width: 250px; margin: 20px auto;" >Submit Request</button>
                     </div>
                     
                 </form>

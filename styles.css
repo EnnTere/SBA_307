@@ -1,11 +1,3 @@
-/* TO DO
-
- - Refactor with nesting selectors 
- - Ensure nested selectors are properly formatted
- - remove unneeded properties
-
-*/
-
 
 
 /***************
@@ -59,31 +51,40 @@ body {
 } */
 
 p, a, label, input, button, span, details {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
     
 a {
     color: var(--BrightOrange);
+
+    :hover {
+        color: var(--LightPurple);
+    }
+
+    :active {
+        color: var(--LightPurple);
+    }
+
 }
 
 h1 {
-    font-size: 4rem;
-}
-
-h3 {
-    font-size: 3.5rem;
-}
-
-h4 {
     font-size: 3rem;
 }
 
-h5 {
+h3 {
+    font-size: 2.75rem;
+}
+
+h4 {
     font-size: 2.5rem;
 }
 
-h6 {
+h5 {
     font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.75rem;
 }
 
 
@@ -197,11 +198,10 @@ Media Queries
 Testing Properties
 *******************/
 
-/* div {
-    border: 1px solid black;
+/*.border {
+    border: 1px solid red;
 } */
 
-/* For testing visibility */
 /* section div {
     margin: 20px;
     background-color: white;
@@ -275,6 +275,10 @@ details[open] summary ~ * {
 .overflow {
     overflow: auto;
 }
+
+
+
+
 
 /*******
 Header 
@@ -376,20 +380,25 @@ Navigation
     text-align: center;
     transition: transform .8s ease;
 
+    a {
+        font-size: 2rem;;
+    }
+
+
     &:hover { 
         background-color: var(--island-dark-prim);
         transform: translate(10px, 0px);
         transition: transform .5s ease;
 
-        a {
-            color: var(--BrightOrange); 
-        }
+        /* a {
+            color: var(--LightPurple);  
+        }*/
     }
     
-    &a:active {
-        color: purple;
+    /*a:active {
+        color: var(--LightPurple);
     }
-    /* Can hide current page from menu */
+     Can hide current page from menu */
 }
 
 /* Is this the cleanest it can be formatted?
@@ -415,19 +424,22 @@ Buttons
 button {
     height: 50px;
     width: 130px;
+    padding: 7px;
+    font-size: 1.1em;
 
     &:hover {
         color: black;
-        background: brown;
+        background: var(--LightBlue)
 
     }
 
     &:active {
         color: black;
-        background: rgb(94, 24, 24);
+        background: var(--LightPurple);
         font-weight: bold;
     }
 }
+
 
 /* margin of main is hidden behind footer */
 
@@ -511,15 +523,15 @@ Card Styling
 }
 
 /* Need to find a way to better position this */
-.title-bar {
-    /* margin: -3px; */
-    /* background-color: ; */
+/* .title-bar { 
+    margin: -3px;
+    background-color: ;
 }
 
 .info-bar {
-    /* top: 54%; */
-    /* background-color: ; */
-}
+    /* top: 54%; 
+    /* background-color: ; 
+} */
 
 .card-box-top {
     height: 47vh;
@@ -573,18 +585,18 @@ Pack Opener
     /* height: 95%; */
     width: 65%;
     margin: 20px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
     div {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         padding: 5px;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
-    img, button {
-        border: 1px solid red;
-    }
+    /* img, button {
+        /* border: 1px solid red;
+    } */
 
     img {
         height: 100%;
@@ -598,90 +610,105 @@ Pack Opener
     }
 } 
 
-/* Table Display Radio-Buttons */
-
-.btn-row {
-    width: 100%;
-    max-width: 720px;
-    padding: 2rem;
-    margin: 0 auto;
+.row1 {
+    margin-bottom: 15px;
 }
 
-.toggle {
+
+/* Radio-Buttons to Show/Hide Table */
+
+/* Row styles */
+.btn-row {
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    /* width: 100%;
+    max-width: 720px;
+    padding: 2rem;
+    margin: 0 auto; */
+    /* align-items: flex-start; */
+}
+
+
+/* Hide the radio button */
+#toggle-pack1, #toggle-pack2, #toggle-pack3 {
+    display: none;
+}
+
+/* Hide content by default */
+.toggled-content1, .toggled-content2, .toggled-content3 {
+    visibility: collapse;
+    background: #ddd;
+
+    h2 {
+        padding: 1.2rem;
+    }
+}
+
+/* Style radio input to look like buttons */
+#toggle-btn1, #toggle-btn2, #toggle-btn3 {
     display: inline-block;
-    height: 35px;
-    width: 95px;
-    text-align: center;
-    color: black;
-    background-color: gray;
+    /* margin-top: 12px; */
+    padding: 5px 11px;
+    /* background-color: grey; */
     border: 1px solid black;
-    user-select: none;
+    border-radius: 4px;
+    /* text-align: center; */
+    /* user-select: none; */
 
     &:hover {
         color: black;
-        background: brown;
+        background: var(--LightBlue)
 
     }
 
     &:active {
         color: black;
-        background: rgb(94, 24, 24);
+        background: var(--LightPurple);
         font-weight: bold;
     }
-
-    p {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 }
 
-.toggle-content {
-    visibility: collapse;
-    /* height: 0;
-    opacity: 0;
-    position: absolute;
-    bottom: 60%; */
-    background-color: yellowgreen;
-    transition: opacity 0.2 ease;
-}
-/* target transition */
-
-.show-table {
-    /* position: absolute; */
-    /* display: none; */
+/* Style button when radio checked */
+input[type="radio"]:checked + label {
+    background-color: var(--LightBlue);
 }
 
-/* input[type="radio"].show-table:checked + .toggle-content {
-    height: 100%;
-    opacity: 1;
-    overflow: hidden;
+
+/* Show hidden content when radio is checked */
+#toggle-pack1:checked ~ .toggled-content1 {
+    /* overflow: hidden;
     transition: all 0.1 ease;
-} */
-
-/* input#pack2.show-table:checked + .toggle-content {
+    transition: visibility 0.2 ease; */
     visibility: visible;
+    margin: 55px auto;
 }
 
-input[type="radio"].show-table:checked ~ * .toggle-content {
-    color: black;
-    background: rgb(94, 24, 24);
-    font-weight: bold;
+#toggle-pack2:checked ~ .toggled-content2 {
+    visibility: visible;
+    margin: 55px auto;
 }
 
-input#pack2.show-table {
-    :checked {
-        .toggle-content {
-            visibility: visible;
-        }
-    }
+#toggle-pack3:checked ~ .toggled-content3 {
+    visibility: visible;
+    margin: 55px auto;
+}
 
+/* #toggle-pack3:checked ~ div.toggled-content3 {
+    visibility: visible;
 } */
 
-#pack1:checked ~ .toggle {
-    background-color: #3f0d9b;
-}
 
+/* .toggled-content1 {
+    position: relative;
+    bottom: 60%;
+} */
+
+.break {
+    /* flex-basis: 100%; */
+    width: 130%;
+    height: 0;
+    /* border: 3px solid green; */
+}
 
 
 
@@ -696,10 +723,12 @@ table {
     table-layout: fixed;
     /* width: 100%; */
     border-collapse: collapse;
-    border: 3px solid purple;
+    /* border: 3px solid purple; */
 }
 
-
+caption p{
+    margin-bottom: 20px;
+}
 
 th, tr, td {
     border: 2px solid black;
@@ -719,7 +748,7 @@ Form
 ******/
 
 form {
-    margin: 55px 15px 45px 15px;
+    margin: 15px 15px 45px 15px;
 
     h1, p {
         margin: 20px 0;
